@@ -13,5 +13,6 @@ os:
 sudo: false
 
 before_install:
+  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew install libgit2; fi
   - Rscript -e 'install.packages("devtools", repos = "http://cran.rstudio.com")'
   - Rscript -e 'install.packages("git2r", repos = "http://cran.rstudio.com")'
